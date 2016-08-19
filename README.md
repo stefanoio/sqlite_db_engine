@@ -38,7 +38,7 @@ query("SELECT * WHERE surname=", "O'connor", " AND (age>", 24, " OR age<", 35, "
 ```
 will be compiled into:
 ```
-query("SELECT * WHERE name=‘O\’connor' AND (age>'24' OR age<'35')")
+query("SELECT * WHERE name='O\'connor' AND (age>'24' OR age<'35')")
 ```
 Please note that in SQL languages there is no strict typing, so treating a number as a string has no downsides and this approach guarantee worry free security from bot code bugs and malicious injections.
 
@@ -47,8 +47,8 @@ The main sqlite_db_engine’s method is `query`, which will return an instance o
 value		// returns a string containing the first value of the first row
 values		// returns an array of strings representing the first values of every row
 row			// returns an associative array representing the first row
-rowN			// returns an array representing the first row
-rows			// returns an array containing every row represented as an associative array
+rowN		// returns an array representing the first row
+rows		// returns an array containing every row represented as an associative array
 rowsN		// returns an array containing every row represented as an array
 id			// returns the last insertion id
 ```
