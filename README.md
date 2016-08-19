@@ -32,7 +32,7 @@ or
 my_database::query("UPDATE users SET last_login=NOW() WHERE username=", $username)->value("SELECT last_login FROM users WHERE username=", $username);
 ```
 
-As you might have notice in those examples we used a peculiar syntax to form our query. sqlite_db_engine has an handy system that can take an array of strings and concatenate them adding the proper escape and quotes. For example:
+As you might have noticed, in those examples we used a peculiar syntax to form our query. sqlite_db_engine has an handy system that can take an array of strings and concatenate them adding the proper escape and quotes. For example:
 ```
 query("SELECT * WHERE surname=", "O'connor", " AND (age>", 24, " OR age<", 35, ")")
 ```
@@ -40,7 +40,7 @@ will be compiled into:
 ```
 query("SELECT * WHERE name='O\'connor' AND (age>'24' OR age<'35')")
 ```
-Please note that in SQL languages there is no strict typing, so treating a number as a string has no downsides and this approach guarantee worry free security from bot code bugs and malicious injections.
+Please note that in SQL languages there is no strict typing, so treating a number as a string has no downsides and this approach guarantee worry free security from both code bugs and malicious injections.
 
 The main sqlite_db_engine’s method is `query`, which will return an instance of the class with the performed query. Any other methods will accept the same query format parameters (optionals, if no query is given the last query data is used) and return a specific value:
 ```
