@@ -1,0 +1,15 @@
+{
+  "name": "sqlite_db_engine",
+  "version": "1.0.0",
+  "description": "Convenient and secure PHP interface for sqlite databases.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stefanoio/sqlite_db_engine.git"
+  },
+  "author": "Stefano Peloso",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/stefanoio/sqlite_db_engine/issues"
+  },
+  "homepage": "https://github.com/stefanoio/sqlite_db_engine#readme"
+}
