@@ -16,20 +16,20 @@ class my_database extends sqlite_db_engine {
 
 sqlite_db_engine is designed with both static methods and internal instance concatenation. That means that you can both use
 ```
-DB::query("SELECT name FROM users WHERE username=", $username)->value();
+my_database::query("SELECT name FROM users WHERE username=", $username)->value();
 ```
 and
 ```
-DB::value("SELECT name FROM users WHERE username=", $username);
+my_database::value("SELECT name FROM users WHERE username=", $username);
 ```
 syntax.
 If you want you can even concatenate more queries:
 ```
-DB::query("UPDATE users SET last_login=NOW() WHERE username=", $username)->query("SELECT last_login FROM users WHERE username=", $username)->value();
+my_database::query("UPDATE users SET last_login=NOW() WHERE username=", $username)->query("SELECT last_login FROM users WHERE username=", $username)->value();
 ```
 or
 ```
-DB::query("UPDATE users SET last_login=NOW() WHERE username=", $username)->value("SELECT last_login FROM users WHERE username=", $username);
+my_database::query("UPDATE users SET last_login=NOW() WHERE username=", $username)->value("SELECT last_login FROM users WHERE username=", $username);
 ```
 
 As you might have notice in those examples we used a peculiar syntax to form our query. sqlite_db_engine has an handy system that can take an array of strings and concatenate them adding the proper escape and quotes. For example:
